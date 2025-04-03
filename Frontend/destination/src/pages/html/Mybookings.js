@@ -103,14 +103,14 @@ const Bookings = () => {
           </h1>
         </div>                                                        
 
-      <div style={{ padding: "5%" }}>
+      <div style={{ padding: "5%", paddingTop: "12%"}}>
         {loading ? (
           <p>Loading bookings...</p>
         ) : error ? (
           <p style={{ color: "red", textAlign: "center" }}>{error}</p>
         ) : bookings.length > 0 ? (
           <>
-            <h2 style={{ marginTop: "12%" }}>Manage Bookings</h2>
+            <h2 style={{ marginTop: "3%" }}>Manage Bookings</h2>
             <table className="table table-bordered" style={tableStyle}>
               <thead>
                 <tr>
