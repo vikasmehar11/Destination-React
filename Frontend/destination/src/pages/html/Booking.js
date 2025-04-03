@@ -53,7 +53,7 @@ const Booking = () => {
     };
 
     try {
-      const response = await fetch('/destination/booking', {
+      const response = await fetch('https://destination-react-backend.onrender.com/destination/booking', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
