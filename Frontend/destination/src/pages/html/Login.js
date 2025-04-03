@@ -40,7 +40,7 @@ const Login = () => {
         Cookies.set('userEmail', email, { secure: true, sameSite: 'Strict' });
 
         setTimeout(() => {
-          navigate('https://destination-react-backend.onrender.com/destination/dashboard', { replace: true });
+          navigate('/destination/dashboard', { replace: true });
         }, 1000);
       } else {
         setError(data.message);
