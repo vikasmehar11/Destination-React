@@ -417,7 +417,6 @@ const Dashboard = () => {
             <h5>Australia</h5>
             <p><strong>Location:</strong> Australia</p>
             <p><strong>Price:</strong> $139/day</p>
-            <p><strong>Duration:</strong> 6 Days</p>
             <p>Indulge in the best vegetarian cuisine while enjoying the magical views of the Australian Alps!</p>
           </div>
         </div>
