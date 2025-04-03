@@ -405,7 +405,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div style={cardStyle}>
-          <Link to="/destination/booking?title=Australia&location=Australia&price=$139&duration=6">
+          <Link to="/destination/booking?title=Australia&location=Australia&price=139&duration=6">
             <img
               src="/images/n.jpg"
               alt="Australia"
