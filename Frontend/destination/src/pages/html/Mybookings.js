@@ -16,7 +16,7 @@ const Bookings = () => {
       return;
     }
 
-    const apiUrl = `/destination/booking?email=${encodeURIComponent(userEmail)}`;
+    const apiUrl = `https://destination-react-backend.onrender.com/destination/booking?email=${encodeURIComponent(userEmail)}`;
     console.log("Fetching from:", apiUrl);
 
     fetch(apiUrl, {
@@ -56,7 +56,7 @@ const Bookings = () => {
   
     try {
       console.log(`Canceling booking: ${bookingId}`);
-      const response = await fetch(`/destination/booking/${bookingId}`, {
+      const response = await fetch(`https://destination-react-backend.onrender.com/destination/booking/${bookingId}`, {
         method: "DELETE",
       });
   
