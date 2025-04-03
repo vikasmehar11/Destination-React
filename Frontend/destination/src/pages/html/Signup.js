@@ -31,7 +31,7 @@ const Signup = () => {
     try {
       console.log('Sending data to the backend:', { username, email, password });
 
-      const response = await fetch('/destination/signup', {
+      const response = await fetch('https://destination-react-backend.onrender.com/destination/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
