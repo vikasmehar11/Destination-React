@@ -79,8 +79,8 @@ const Signup = () => {
           style={{
             color: 'wheat',
             position: 'absolute',
-            marginTop: '1%',
-            marginLeft: '32%',
+            marginTop: '2%',
+            marginLeft: '56%',
             zIndex: 2,
             fontFamily: '"Brush Script MT", cursive',
             fontSize: '2rem',
