@@ -20,7 +20,7 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch('/destination/login', {
+      const response = await fetch('https://destination-react-backend.onrender.com/destination/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
