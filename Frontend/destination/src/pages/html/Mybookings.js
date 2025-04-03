@@ -91,8 +91,8 @@ const Bookings = () => {
             style={{
               color: 'wheat',
               position: 'fixed',
-              marginTop: '1%',
-              marginLeft: '32%',
+              marginTop: '2%',
+              marginLeft: '56%',
               zIndex: 2,
               fontFamily: '"Brush Script MT", cursive',
               fontSize: '2rem',
