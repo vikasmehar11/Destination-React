@@ -58,7 +58,7 @@ const Login = () => {
           style={{ height: '10em', width: '100%', position: 'absolute', zIndex: 1 }} />
       </div>
       <div>
-        <h1 align="center" style={{ color: 'wheat', position: 'absolute', marginTop: '1%', marginLeft: '32%', zIndex: 2,fontFamily: '"Brush Script MT", cursive',fontSize: '2rem',fontWeight: 'bold' }}>
+        <h1 align="center" style={{ color: 'wheat', position: 'absolute', marginTop: '2%', marginLeft: '56%', zIndex: 2,fontFamily: '"Brush Script MT", cursive',fontSize: '2rem',fontWeight: 'bold' }}>
           Destination Tours And Travels
         </h1>
       </div>
