@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -28,35 +29,37 @@ const Signup = () => {
       return;
     }
 
-    try {
+        try {
       console.log('Sending data to the backend:', { username, email, password });
 
-      const response = await fetch('https://destination-react-backend.onrender.com/destination/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, email, password, confirmpassword }),
+      const response = await axios.post('/destination/signup', {
+        username,
+        email,
+        password,
+        confirmpassword,
       });
 
-      const data = await response.json();
-      console.log('Response from backend:', data);
+      console.log('Response from backend:', response.data);
 
-      if (data.status) {
-        setSuccess(data.message); 
+      if (response.status === 200 || response.status === 201) {
+        setSuccess(response.data.message);
         setUsername('');
         setEmail('');
         setPassword('');
         setConfirmPassword('');
+
+        setTimeout(() => {
+          navigate('/destination/login'); 
+        }, 2000); 
       } else {
-        setError(data.message); 
+        setError(response.data.message || 'Signup failed.');
       }
     } catch (error) {
       console.error('Error occurred:', error);
-      setError('An error occurred. Please try again.');
+      setError(error.response?.data?.message || 'An error occurred. Please try again.');
     }
   };
-
+    
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <div>
