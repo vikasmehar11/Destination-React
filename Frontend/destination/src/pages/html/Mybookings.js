@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Cookies from 'js-cookie';
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -16,26 +17,22 @@ const Bookings = () => {
       return;
     }
 
-    const apiUrl = `https://destination-react-backend.onrender.com/destination/booking?email=${encodeURIComponent(userEmail)}`;
+    const apiUrl = `/destination/booking?email=${encodeURIComponent(userEmail)}`;
     console.log("Fetching from:", apiUrl);
 
-    fetch(apiUrl, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-         Authorization: `Bearer ${Cookies.get("authToken")}`,
-      },
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`API Error: ${response.status} ${response.statusText}`);
-        }
-        return response.json();
+    axios
+      .get(apiUrl, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${Cookies.get("authToken")}`,
+        },
       })
-      .then((data) => {
-        console.log("API Response:", data);
+      .then((response) => {
+        console.log("API Response:", response.data);
 
-        const userBookings = data.filter((b) => b.email.toLowerCase().trim() === userEmail.toLowerCase().trim());
+        const userBookings = response.data.filter(
+          (b) => b.email.toLowerCase().trim() === userEmail.toLowerCase().trim()
+        );
 
         if (userBookings.length > 0) {
           setBookings(userBookings);
@@ -53,57 +50,54 @@ const Bookings = () => {
   const handleCancel = async (bookingId) => {
     const confirmCancel = window.confirm("Are you sure you want to cancel this booking?");
     if (!confirmCancel) return;
-  
+
     try {
       console.log(`Canceling booking: ${bookingId}`);
-      const response = await fetch(`https://destination-react-backend.onrender.com/destination/booking/${bookingId}`, {
-        method: "DELETE",
-      });
-  
-      const data = await response.json();
-      console.log("Cancel response:", data);
-  
-      if (response.ok && (data.status || data.message.includes("deleted"))) {
+      const response = await axios.delete(`/destination/booking/${bookingId}`);
+
+      console.log("Cancel response:", response.data);
+
+      if (response.status === 200 && (response.data.status || response.data.message.includes("deleted"))) {
         setBookings(bookings.filter((booking) => booking._id !== bookingId));
       } else {
-        alert("Failed to cancel booking: " + data.message);
+        alert("Failed to cancel booking: " + response.data.message);
       }
     } catch (error) {
       console.error("Error canceling booking:", error);
       alert("An error occurred while canceling the booking.");
     }
   };
-  
+
   return (
     <div style={mainContainerStyle}>
       <div>
-          <img
-            src="/images/banner.jpg"
-            className="img-fluid"
-            alt="..."
-            style={{ height: '10em', width: '100%', position: 'fixed', zIndex: 1 }}
-          />
-        </div>
+        <img
+          src="/images/banner.jpg"
+          className="img-fluid"
+          alt="..."
+          style={{ height: "10em", width: "100%", position: "fixed", zIndex: 1 }}
+        />
+      </div>
 
-        <div>
-          <h1
-            align="center"
-            style={{
-              color: 'wheat',
-              position: 'fixed',
-              marginTop: '2%',
-              marginLeft: '56%',
-              zIndex: 2,
-              fontFamily: '"Brush Script MT", cursive',
-              fontSize: '2rem',
-              fontWeight: 'bold'
-            }}
-          >
-            Destination Tours And Travels
-          </h1>
-        </div>                                                        
+      <div>
+        <h1
+          align="center"
+          style={{
+            color: "wheat",
+            position: "fixed",
+            marginTop: "2%",
+            marginLeft: "56%",
+            zIndex: 2,
+            fontFamily: '"Brush Script MT", cursive',
+            fontSize: "2rem",
+            fontWeight: "bold",
+          }}
+        >
+          Destination Tours And Travels
+        </h1>
+      </div>
 
-      <div style={{ padding: "5%", paddingTop: "12%"}}>
+      <div style={{ padding: "5%", paddingTop: "12%" }}>
         {loading ? (
           <p>Loading bookings...</p>
         ) : error ? (
@@ -131,7 +125,6 @@ const Bookings = () => {
                     <td style={tableCellStyle}>{booking.persons}</td>
                     <td style={tableCellStyle}>${booking.price}</td>
                     <td style={tableCellStyle}>
-                     
                       <button className="btn btn-danger btn-sm" onClick={() => handleCancel(booking._id)}>
                         Cancel
                       </button>
@@ -152,14 +145,6 @@ const Bookings = () => {
 const mainContainerStyle = {
   height: "90vh",
 };
-
-// const headingStyle = {
-//   color: "wheat",
-//   position: "absolute",
-//   marginTop: "1%",
-//   marginLeft: "42%",
-//   fontSize: "2rem",
-// };
 
 const tableStyle = {
   width: "100%",
