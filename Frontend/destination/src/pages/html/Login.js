@@ -19,19 +19,10 @@ const Login = () => {
       return;
     }
 
-    try {
-      const response = await fetch('https://destination-react-backend.onrender.com/destination/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-        credentials: 'include',
-      });
-
-      if (!response.ok) {
-        throw new Error('Backend error occurred: ' + response.status);
-      }
-
-      const data = await response.json();
+  try {
+      const response = await axios.post('https://destination-react-backend.onrender.com/destination/login', { email, password }, { withCredentials: true });
+      
+      const data = response.data; 
       console.log('Backend Response:', data);
 
       if (data.status) {
@@ -50,6 +41,7 @@ const Login = () => {
       setError('An error occurred. Please try again.');
     }
   };
+
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
