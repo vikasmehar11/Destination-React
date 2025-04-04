@@ -165,13 +165,13 @@ const Airticket = () => {
   );
 };
 
-const headingStyle = {
-  color: 'wheat',
-  position: 'absolute',
-  marginTop: '1%',
-  marginLeft: '25%',
-  fontSize: '2rem',
-};
+// const headingStyle = {
+//   color: 'wheat',
+//   position: 'absolute',
+//   marginTop: '1%',
+//   marginLeft: '25%',
+//   fontSize: '2rem',
+// };
 
 const bannerStyle = {
   height: '10em',
