@@ -66,7 +66,7 @@ const Home = () => {
 
       <div style={galleryContainerStyle}>
         <div style={cardStyle}>
-          <Link to="/destination/booking?title=Crazy+Deals&location=Bali,+Indonesia&price=799&duration=7">
+          <Link to="/destination/booking?title=Crazy+Deals&location=Bali,+Indonesia&price=79&duration=7">
             <img
               src="/images/Crazy-Deals-Banner-1-421x363.html"
               alt="Crazy Deals"
@@ -77,14 +77,13 @@ const Home = () => {
           <div style={infoCardStyle}>
             <h5>Crazy Deals</h5>
             <p><strong>Location:</strong> Bali, Indonesia</p>
-            <p><strong>Price:</strong> $799</p>
-            <p><strong>Duration:</strong> 7 Days</p>
+            <p><strong>Price:</strong> $79/day</p>
             <p>Book now for exclusive discounts on the best travel deals to beautiful Bali!</p>
           </div>
         </div>
 
         <div style={cardStyle}>
-          <Link to="/destination/booking?title=International+Veg+Special&location=Zurich,+Switzerland&price=950&duration=5">
+          <Link to="/destination/booking?title=International+Veg+Special&location=Zurich,+Switzerland&price=95&duration=5">
             <img
               src="/images/International-Veg-Special.html"
               alt="International Veg Special"
@@ -95,14 +94,13 @@ const Home = () => {
           <div style={infoCardStyle}>
             <h5>International Veg Special</h5>
             <p><strong>Location:</strong> Zurich, Switzerland</p>
-            <p><strong>Price:</strong> $950</p>
-            <p><strong>Duration:</strong> 5 Days</p>
+            <p><strong>Price:</strong> $95/day</p>
             <p>Enjoy a delightful vegetarian feast in the heart of Switzerland with our special package!</p>
           </div>
         </div>
 
         <div style={cardStyle}>
-          <Link to="/destination/booking?title=Cruise+Tour&location=Caribbean+Sea&price=1200&duration=10">
+          <Link to="/destination/booking?title=Cruise+Tour&location=Caribbean+Sea&price=120&duration=10">
             <img
               src="/images/Cruise-Tour-Banner-421x363.html"
               alt="Cruise Tour"
@@ -113,14 +111,13 @@ const Home = () => {
           <div style={infoCardStyle}>
             <h5>Cruise Tour</h5>
             <p><strong>Location:</strong> Caribbean Sea</p>
-            <p><strong>Price:</strong> $1200</p>
-            <p><strong>Duration:</strong> 10 Days</p>
+            <p><strong>Price:</strong> $120/day</p>
             <p>Sail across the Caribbean islands, with luxurious stops and plenty of leisure activities on board.</p>
           </div>
         </div>
 
         <div style={cardStyle}>
-          <Link to="/destination/booking?title=Europe+Tour&location=Paris,+France&price=1500&duration=12">
+          <Link to="/destination/booking?title=Europe+Tour&location=Paris,+France&price=150&duration=12">
             <img
               src="/images/Europe-Banner-1-421x363.html"
               alt="Europe Tour"
@@ -131,14 +128,13 @@ const Home = () => {
           <div style={infoCardStyle}>
             <h5>Europe Tour</h5>
             <p><strong>Location:</strong> Paris, France</p>
-            <p><strong>Price:</strong> $1500</p>
-            <p><strong>Duration:</strong> 12 Days</p>
+            <p><strong>Price:</strong> $150/day</p>
             <p>Explore Europe's most iconic cities, from Paris to Rome, with guided tours and cultural experiences!</p>
           </div>
         </div>
 
         <div style={cardStyle}>
-          <Link to="/destination/booking?title=Honeymoon+Special&location=Maldives&price=2200&duration=6">
+          <Link to="/destination/booking?title=Honeymoon+Special&location=Maldives&price=220&duration=6">
             <img
               src="/images/Honeymoon-Banner-421x363.html"
               alt="Honeymoon Special"
@@ -149,14 +145,13 @@ const Home = () => {
           <div style={infoCardStyle}>
             <h5>Honeymoon Special</h5>
             <p><strong>Location:</strong> Maldives</p>
-            <p><strong>Price:</strong> $2200</p>
-            <p><strong>Duration:</strong> 6 Days</p>
+            <p><strong>Price:</strong> $220/day</p>
             <p>Celebrate your honeymoon in paradise with beautiful beach resorts and romantic candlelit dinners!</p>
           </div>
         </div>
 
         <div style={cardStyle}>
-          <Link to="/destination/booking?title=USA+Tour&location=New+York,+USA&price=1350&duration=8">
+          <Link to="/destination/booking?title=USA+Tour&location=New+York,+USA&price=135&duration=8">
             <img
               src="/images/USA-Banner-421x363.html"
               alt="USA Tour"
@@ -167,8 +162,7 @@ const Home = () => {
           <div style={infoCardStyle}>
             <h5>USA Tour</h5>
             <p><strong>Location:</strong> New York, USA</p>
-            <p><strong>Price:</strong> $1350</p>
-            <p><strong>Duration:</strong> 8 Days</p>
+            <p><strong>Price:</strong> $135/day</p>
             <p>Explore the vibrant city life of New York, from Times Square to Central Park, with our guided USA Tour.</p>
           </div>
         </div>
