@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const Booking = () => {
   const [title, setTitle] = useState('');
@@ -51,19 +52,13 @@ const Booking = () => {
       persons: numPersons,
       price,
     };
+    
+  try {
+      const response = await axios.post('https://destination-react-backend.onrender.com/destination/booking', bookingData);
 
-    try {
-      const response = await fetch('https://destination-react-backend.onrender.com/destination/booking', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(bookingData),
-      });
+      const data = response.data; 
 
-      const data = await response.json();
-
-      if (response.ok) {
+      if (response.status === 200 || response.status === 201) { 
         alert('Booking successful! Pay via the URL sent to your registered phone number to get booking details.');
         form.reset();
         setDate('');
